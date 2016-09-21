@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Tracking</span> {{vm.tracking.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="nadellaApp.tracking.order_start_date">Order Start Date</span></dt>
+        <dd>
+            <span>{{vm.tracking.order_start_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="nadellaApp.tracking.order_end_date">Order End Date</span></dt>
+        <dd>
+            <span>{{vm.tracking.order_end_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="nadellaApp.tracking.actual_delivery_date">Actual Delivery Date</span></dt>
+        <dd>
+            <span>{{vm.tracking.actual_delivery_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Tracking</span></dt>
+        <dd>
+            <a ui-sref="order-detail({id:vm.tracking.tracking.id})">{{vm.tracking.tracking.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="tracking-detail.edit({id:vm.tracking.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

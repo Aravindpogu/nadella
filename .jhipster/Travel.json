@@ -1,0 +1,38 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "Travel",
+            "otherEntityName": "tracking",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "from_place",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "to_place",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "from_date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "to_date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20160921003739",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "travel",
+    "pagination": "pager"
+}

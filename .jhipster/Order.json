@@ -1,0 +1,33 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "Order",
+            "otherEntityName": "item",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "order"
+        },
+        {
+            "relationshipName": "tracking",
+            "otherEntityName": "tracking",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "tracking"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "order_date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160921002321",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "order_table",
+    "pagination": "pager"
+}

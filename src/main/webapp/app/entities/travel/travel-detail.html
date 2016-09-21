@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Travel</span> {{vm.travel.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="nadellaApp.travel.from_place">From Place</span></dt>
+        <dd>
+            <span>{{vm.travel.from_place}}</span>
+        </dd>
+        <dt><span translate="nadellaApp.travel.to_place">To Place</span></dt>
+        <dd>
+            <span>{{vm.travel.to_place}}</span>
+        </dd>
+        <dt><span translate="nadellaApp.travel.from_date">From Date</span></dt>
+        <dd>
+            <span>{{vm.travel.from_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="nadellaApp.travel.to_date">To Date</span></dt>
+        <dd>
+            <span>{{vm.travel.to_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Travel</span></dt>
+        <dd>
+            <a ui-sref="tracking-detail({id:vm.travel.travel.id})">{{vm.travel.travel.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="travel-detail.edit({id:vm.travel.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

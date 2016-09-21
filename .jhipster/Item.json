@@ -1,0 +1,26 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "order",
+            "otherEntityName": "order",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20160921001731",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "item",
+    "pagination": "no"
+}

@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTrackingLabel">Create or edit a Tracking</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.tracking.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.tracking.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="nadellaApp.tracking.order_start_date" for="field_order_start_date">Order Start Date</label>
+                <div class="input-group">
+                    <input id="field_order_start_date" type="text" class="form-control" name="order_start_date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.tracking.order_start_date" is-open="vm.datePickerOpenStatus.order_start_date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('order_start_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="nadellaApp.tracking.order_end_date" for="field_order_end_date">Order End Date</label>
+                <div class="input-group">
+                    <input id="field_order_end_date" type="text" class="form-control" name="order_end_date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.tracking.order_end_date" is-open="vm.datePickerOpenStatus.order_end_date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('order_end_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="nadellaApp.tracking.actual_delivery_date" for="field_actual_delivery_date">Actual Delivery Date</label>
+                <div class="input-group">
+                    <input id="field_actual_delivery_date" type="text" class="form-control" name="actual_delivery_date" uib-datepicker-popup="{{dateformat}}" ng-model="vm.tracking.actual_delivery_date" is-open="vm.datePickerOpenStatus.actual_delivery_date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('actual_delivery_date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_Tracking">Tracking</label>
+            <select class="form-control" id="field_Tracking" name="Tracking" ng-model="vm.tracking.tracking" ng-options="order as order.id for order in vm.trackings | orderBy:'id' track by order.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
